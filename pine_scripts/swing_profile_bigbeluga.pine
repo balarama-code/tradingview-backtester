@@ -1,0 +1,9 @@
+// This work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+// © BigBeluga
+//@version=6
+indicator("Swing Profile [BigBeluga]", overlay = true)
+
+// Swing detection + volume profile per swing leg
+// PoC (Point of Control) = highest volume price bin
+// Buy/Sell volume delta within each swing
+// Direction: up when low==lowest, down when high==highest
