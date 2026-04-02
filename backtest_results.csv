@@ -11,3 +11,5 @@ SwingForecast_BOSWaves,-47.5,-1.65,-56.24,38.27,392,1h,Swing structure + weighte
 SwingForecast_BOSWaves,-49.18,-0.53,-50.75,33.33,39,1d,"Swing structure + weighted forecast target (BOSWaves, daily)"
 SwingProfile_BigBeluga,-20.28,-0.99,-28.6,40.78,103,1h,Swing profile + PoC + volume delta filter (BigBeluga)
 SwingProfile_BigBeluga,-4.07,-0.1,-17.57,36.36,11,1d,"Swing profile + PoC + volume delta filter (BigBeluga, daily)"
+PrecisionSniper,-30.68,-0.72,-48.03,20.33,305,1h,"10-factor confluence + EMA cross, Default preset (WillyAlgo Sniper)"
+PrecisionSniper_Swing,159.32,0.47,-34.85,37.5,8,1d,"10-factor confluence + EMA cross, Swing preset (WillyAlgo Sniper, daily)"

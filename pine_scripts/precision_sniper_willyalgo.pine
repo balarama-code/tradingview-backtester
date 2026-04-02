@@ -1,0 +1,5 @@
+// © WillyAlgoTrader - Precision Sniper v1.1.0
+// 10-factor confluence scoring: EMA cross, trend, RSI, MACD, VWAP, Volume, ADX, HTF bias
+// Entry on EMA crossover when score >= threshold
+// ATR-based SL with structure option, 3 TP levels, trailing stop
+// Auto-preset by timeframe
