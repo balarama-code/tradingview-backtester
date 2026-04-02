@@ -1,0 +1,5 @@
+// © WillyAlgoTrader - StealthTrail SuperTrend ML Pro v5.1.0
+// Adaptive SuperTrend with regime detection (trending/ranging/volatile)
+// Auto-tuned ATR length + multiplier based on instrument profile
+// 13-feature ML scoring: momentum, volume, trend ER, volatility, MACD, ADX, etc.
+// Flip cushion + cooldown filters, trailing SL, 3 TP levels

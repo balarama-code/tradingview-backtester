@@ -13,3 +13,5 @@ SwingProfile_BigBeluga,-20.28,-0.99,-28.6,40.78,103,1h,Swing profile + PoC + vol
 SwingProfile_BigBeluga,-4.07,-0.1,-17.57,36.36,11,1d,"Swing profile + PoC + volume delta filter (BigBeluga, daily)"
 PrecisionSniper,-30.68,-0.72,-48.03,20.33,305,1h,"10-factor confluence + EMA cross, Default preset (WillyAlgo Sniper)"
 PrecisionSniper_Swing,159.32,0.47,-34.85,37.5,8,1d,"10-factor confluence + EMA cross, Swing preset (WillyAlgo Sniper, daily)"
+StealthTrail_ML,-54.43,-1.58,-61.89,25.84,356,1h,Adaptive SuperTrend + regime auto-tune + RSI filter (WillyAlgo StealthTrail)
+StealthTrail_ML,48.39,0.2,-59.49,40.0,15,1d,"Adaptive SuperTrend + regime auto-tune + RSI filter (WillyAlgo StealthTrail, daily)"
