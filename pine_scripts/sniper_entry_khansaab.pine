@@ -1,0 +1,71 @@
+//@version=6
+// © KhanSaab - 2026. All rights reserved.
+indicator("Sniper Entry/Exit with SL&TP by KhanSaab V.02", overlay=true, max_labels_count=500, max_boxes_count=500, max_bars_back=1000)
+
+// --- COLORS ---
+color c_turquoise = #40E0D0
+
+// --- INPUTS ---
+groupVis         = "Visuals & UI"
+dashTextSize     = input.string("small", "Dashboard Font Size", options=["tiny", "small", "normal", "large", "huge"], group=groupVis)
+tradeTextSize    = input.string("small", "Trade Label Size", options=["tiny", "small", "normal", "large", "huge"], group=groupVis)
+ribbonOpacity    = input.int(75, "EMA Ribbon Opacity", minval=0, maxval=100, group=groupVis)
+labelOffset      = input.int(12, "Label Right Offset (Bars)", minval=1, group=groupVis)
+
+groupRisk        = "Risk Management"
+atrMultiplier    = input.float(1.5, "SL ATR Multiplier", minval=0.1, step=0.1, group=groupRisk)
+
+// --- GLOBAL FUNCTIONS ---
+f_addDashRow(_table, _row, _title, _val, _col, _size) =>
+    table.cell(_table, 0, _row, _title, text_color=color.black, text_halign=text.align_left, text_size=_size)
+    table.cell(_table, 1, _row, _val, text_color=_col, text_size=_size, text_halign=text.align_right)
+
+// --- GLOBAL INDICATORS ---
+ema9    = ta.ema(close, 9)
+ema21   = ta.ema(close, 21)
+vwapV   = ta.vwap(hlc3)
+atr     = ta.atr(14)
+rsiVal  = ta.rsi(close, 14)
+rsi5m   = request.security(syminfo.tickerid, "5", ta.rsi(close, 14))
+[m, s, _] = ta.macd(close, 12, 26, 9)
+[_, _, adx] = ta.dmi(14, 14)
+volAvg  = ta.sma(volume, 20)
+
+// --- DUAL SCORE LOGIC ---
+float bScore = 0
+bScore += (close > vwapV ? 1 : 0), bScore += (rsiVal > 50 ? 1 : 0), bScore += (m > s ? 1 : 0)
+bScore += (ema9 > ema21 ? 1 : 0), bScore += (adx > 25 and close > ema9 ? 1 : 0)
+bScore += (volume > volAvg and close > open ? 1 : 0), bScore += (rsi5m > 50 ? 1 : 0)
+float bullPct = (bScore / 7) * 100
+
+float rScore = 0
+rScore += (close < vwapV ? 1 : 0), rScore += (rsiVal < 50 ? 1 : 0), rScore += (m < s ? 1 : 0)
+rScore += (ema9 < ema21 ? 1 : 0), rScore += (adx > 25 and close < ema9 ? 1 : 0)
+rScore += (volume > volAvg and close < open ? 1 : 0), rScore += (rsi5m < 50 ? 1 : 0)
+float bearPct = (rScore / 7) * 100
+
+// --- BIAS LOGIC ---
+string biasText = (bullPct - bearPct) >= 40 ? "STRONG BULL" : (bearPct - bullPct) >= 40 ? "STRONG BEAR" : bullPct > bearPct ? "MILD BULL" : "MILD BEAR"
+color biasCol = biasText == "STRONG BULL" ? color.green : biasText == "STRONG BEAR" ? color.red : color.gray
+
+// --- SIGNAL LOGIC & TRADE SETUP ---
+var int lastSignalState = 0
+var float entryP = 0.0, var float slP = 0.0, var float t1 = 0.0, var float t2 = 0.0, var float t3 = 0.0, var float t4 = 0.0, var float t5 = 0.0
+var bool t1Hit = false, var bool t2Hit = false, var bool t3Hit = false, var bool t4Hit = false, var bool t5Hit = false
+
+buyCond  = ta.crossover(ema9, ema21)
+sellCond = ta.crossunder(ema9, ema21)
+triggerBuy = buyCond and lastSignalState <= 0
+triggerSell = sellCond and lastSignalState >= 0
+
+if triggerBuy or triggerSell
+    lastSignalState := triggerBuy ? 1 : -1
+    entryP := close
+    float risk = atr * atrMultiplier
+    slP := triggerBuy ? entryP - risk : entryP + risk
+    t1  := triggerBuy ? entryP + risk : entryP - risk
+    t2  := triggerBuy ? entryP + (risk * 2) : entryP - (risk * 2)
+    t3  := triggerBuy ? entryP + (risk * 3) : entryP - (risk * 3)
+    t4  := triggerBuy ? entryP + (risk * 4) : entryP - (risk * 4)
+    t5  := triggerBuy ? entryP + (risk * 5) : entryP - (risk * 5)
+    t1Hit := false, t2Hit := false, t3Hit := false, t4Hit := false, t5Hit := false
