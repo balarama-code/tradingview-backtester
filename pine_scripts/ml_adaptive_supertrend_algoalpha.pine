@@ -1,0 +1,9 @@
+// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © AlgoAlpha
+
+//@version=5
+indicator("Machine Learning Adaptive SuperTrend [AlgoAlpha]", "AlgoAlpha - Adaptive SuperTrend", overlay = true, max_labels_count = 500)
+
+// K-Means clustering on ATR to classify volatility into 3 clusters (high/medium/low)
+// Uses the assigned cluster centroid as the ATR input for SuperTrend
+// SuperTrend direction changes = buy/sell signals

@@ -5,3 +5,5 @@ SniperKhanSaab,-40.33,-1.07,-44.34,22.0,350,1h,EMA9/21 cross + bull score filter
 SniperKhanSaab,131.99,0.52,-41.38,35.29,34,1d,"EMA9/21 cross + bull score filter + ATR SL (KhanSaab Sniper, daily)"
 SwingVWAP_Zeiierman,-11.62,-0.5,-23.52,18.42,76,1h,Swing direction + anchored VWAP filter (Zeiierman)
 SwingVWAP_Zeiierman,30.59,0.32,-14.81,27.27,11,1d,"Swing direction + anchored VWAP filter (Zeiierman, daily)"
+ML_AdaptiveSuperTrend,-40.92,-0.92,-53.83,31.91,257,1h,K-Means adaptive SuperTrend (AlgoAlpha)
+ML_AdaptiveSuperTrend,10.02,0.06,-52.49,33.33,27,1d,"K-Means adaptive SuperTrend (AlgoAlpha, daily)"
