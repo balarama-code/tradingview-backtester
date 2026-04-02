@@ -1,0 +1,5 @@
+// © fluxchart - Market Structure Dashboard | Flux Charts
+// Multi-TF market structure: swing HH/HL/LH/LL, Order Blocks, FVGs, EMA trend
+// Structure bias: bullish when HH+HL, bearish when LH+LL
+// Swing break/sweep detection with reclaim signals
+// Primarily a dashboard/visualization tool, backtested using structure bias + EMA

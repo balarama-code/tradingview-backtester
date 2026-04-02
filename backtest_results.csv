@@ -17,3 +17,5 @@ StealthTrail_ML,-54.43,-1.58,-61.89,25.84,356,1h,Adaptive SuperTrend + regime au
 StealthTrail_ML,48.39,0.2,-59.49,40.0,15,1d,"Adaptive SuperTrend + regime auto-tune + RSI filter (WillyAlgo StealthTrail, daily)"
 MACD_SMA200,-6.26,-0.16,-25.77,31.82,44,1h,MACD + SMA200 trend filter (ChartArt)
 MACD_SMA200,5.42,0.05,-33.14,40.0,5,1d,"MACD + SMA200 trend filter (ChartArt, daily)"
+MarketStructure_Flux,-32.93,-0.77,-35.17,32.97,182,1h,Market Structure HH/HL/LH/LL + EMA filter (Flux Charts)
+MarketStructure_Flux,-47.62,-0.38,-72.04,30.0,20,1d,"Market Structure HH/HL/LH/LL + EMA filter (Flux Charts, daily)"
