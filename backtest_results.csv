@@ -15,3 +15,5 @@ PrecisionSniper,-30.68,-0.72,-48.03,20.33,305,1h,"10-factor confluence + EMA cro
 PrecisionSniper_Swing,159.32,0.47,-34.85,37.5,8,1d,"10-factor confluence + EMA cross, Swing preset (WillyAlgo Sniper, daily)"
 StealthTrail_ML,-54.43,-1.58,-61.89,25.84,356,1h,Adaptive SuperTrend + regime auto-tune + RSI filter (WillyAlgo StealthTrail)
 StealthTrail_ML,48.39,0.2,-59.49,40.0,15,1d,"Adaptive SuperTrend + regime auto-tune + RSI filter (WillyAlgo StealthTrail, daily)"
+MACD_SMA200,-6.26,-0.16,-25.77,31.82,44,1h,MACD + SMA200 trend filter (ChartArt)
+MACD_SMA200,5.42,0.05,-33.14,40.0,5,1d,"MACD + SMA200 trend filter (ChartArt, daily)"

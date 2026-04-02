@@ -1,0 +1,4 @@
+// ChartArt's MACD + SMA 200 Strategy v1.0
+// LONG: MACD histogram crosses above 0 + MACD > 0 + fastMA > slowMA + price > SMA200
+// SHORT: MACD histogram crosses below 0 + MACD < 0 + fastMA < slowMA + price < SMA200
+// Uses SMA(12), SMA(26), SMA(200), MACD signal SMA(9)
