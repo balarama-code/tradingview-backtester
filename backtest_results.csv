@@ -3,3 +3,5 @@ RSI_BollingerBands,-23.53,-0.42,-43.74,59.02,61,1h,"RSI<30 + lower BB buy, RSI>7
 RSI_BollingerBands,-44.88,-0.3,-71.32,66.67,6,1d,"RSI<30 + lower BB buy, RSI>70 + upper BB sell (daily)"
 SniperKhanSaab,-40.33,-1.07,-44.34,22.0,350,1h,EMA9/21 cross + bull score filter + ATR SL (KhanSaab Sniper)
 SniperKhanSaab,131.99,0.52,-41.38,35.29,34,1d,"EMA9/21 cross + bull score filter + ATR SL (KhanSaab Sniper, daily)"
+SwingVWAP_Zeiierman,-11.62,-0.5,-23.52,18.42,76,1h,Swing direction + anchored VWAP filter (Zeiierman)
+SwingVWAP_Zeiierman,30.59,0.32,-14.81,27.27,11,1d,"Swing direction + anchored VWAP filter (Zeiierman, daily)"
