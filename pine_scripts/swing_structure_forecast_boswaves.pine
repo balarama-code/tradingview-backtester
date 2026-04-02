@@ -1,0 +1,10 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © BOSWaves
+
+//@version=6
+indicator("Swing Structure Forecast [BOSWaves]", overlay = true)
+
+// Swing detection using highest/lowest over swingLen bars
+// Tracks swing highs/lows, creates S/R zones, forecasts next swing target
+// BUY when swing low confirmed (dir flips to uptrend)
+// SELL when swing high confirmed (dir flips to downtrend)
