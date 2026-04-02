@@ -1,0 +1,3 @@
+strategy_name,return_pct,sharpe_ratio,max_drawdown,win_rate,num_trades,timeframe,notes
+RSI_BollingerBands,-23.53,-0.42,-43.74,59.02,61,1h,"RSI<30 + lower BB buy, RSI>70 + upper BB sell"
+RSI_BollingerBands,-44.88,-0.3,-71.32,66.67,6,1d,"RSI<30 + lower BB buy, RSI>70 + upper BB sell (daily)"
